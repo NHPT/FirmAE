@@ -4,6 +4,7 @@ FirmAE is a fully-automated framework that performs emulation and vulnerability 
 
 We also developed a dynamic analysis tool for 0-day discovery, which infers web service information based on the filesystem and kernel logs of target firmware.
 By running our tool on the succesfully emulation firmware images, we discovered 12 new 0-days which affect 23 devices.
+[简体中文](https://github.com/NHPT/FirmAE/edit/master/README_zh.md)
 
 # Installation
 
