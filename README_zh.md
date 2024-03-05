@@ -162,3 +162,7 @@ $ export https_proxy=http://127.0.0.1:7890
 $ export http_proxy=http://127.0.0.1:7890
 $ ./download.sh
 ```
+运行`./docker-init.sh`报错`error parsing HTTP 408 response body: invalid character '<' looking for beginning of value: "<html><body><h1>408 Request Time-out</h1>\nYour browser didn't send a complete request in time.\n</body></html>\n"`时执行：
+```console
+$ docker pull ubuntu:18.04
+```
