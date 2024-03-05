@@ -18,10 +18,10 @@ $SUDO usermod -aG docker $USER
 # postgresql
 $SUDO apt install -y postgresql
 $SUDO /etc/init.d/postgresql restart
-$SUDO -u postgres bash -c "psql -c \"CREATE USER firmadyne WITH PASSWORD 'firmadyne';\""
-$SUDO -u postgres createdb -O firmadyne firmware
-$SUDO -u postgres psql -d firmware < ./database/schema
-echo "listen_addresses = '172.17.0.1,127.0.0.1,localhost'" | $SUDO -u postgres tee --append /etc/postgresql/*/main/postgresql.conf
+su - postgres bash -c "psql -c \"CREATE USER firmadyne WITH PASSWORD 'firmadyne';\""
+su - postgres createdb -O firmadyne firmware
+su - postgres psql -d firmware < ./database/schema
+echo "listen_addresses = '172.17.0.1,127.0.0.1,localhost'" | su - postgres tee --append /etc/postgresql/*/main/postgresql.conf
 echo "host all all 172.17.0.1/24 trust" | $SUDO -u postgres tee --append /etc/postgresql/*/main/pg_hba.conf
 
 $SUDO apt install -y libpq-dev
